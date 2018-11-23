@@ -1,0 +1,298 @@
+/*------------CONFIRMACION ELIMINAR-------------------------*/
+#cont_general_confirmacion_eliminar_publicacion{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(51,51,51,.7);
+    display: none;
+}
+#cont_confirmacion_eliminar_publicacion{
+    position: absolute;
+    width: 30%;
+    top: 20%;
+    left: 35%;
+    border-radius: 5px;
+    background-color: rgba(51,51,51,1);
+}
+#div_confirmacion_eliminar_publicacion{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    color: aliceblue;
+}
+#seguro_span_publicacion{
+    margin: 5px;
+}
+#seguro_span_publicacion span{
+    display: block;
+}
+#confirmacion_botones_publicacion{
+    margin: 5px;
+}
+#btn_confirmacion_aceptar_publicacion{
+    border: none;
+    background-color:  #4CAF50;
+}
+#btn_confirmacion_cancelar_publicacion{
+    border: none;
+    background-color: #E74C3C;
+}
+#btn_confirmacion_aceptar_publicacion:hover{
+    background-color: #218838;
+}
+#btn_confirmacion_cancelar_publicacion:hover{
+    background-color:#C3322E;
+}
+/*------------CONFIRMACION ELIMINAR-------------------------*/
+/*---------------------------------------------------------*/
+#cont_nuevo_dispositivo_publicacion{
+    display: none;
+}
+#cont_div_nuevo_dispositivo_publicacion{
+    border: solid 1px #CCD1D1;
+    border-radius: 5px;
+    padding: 5px;   
+}
+#div_nuevo_dispositivo_publicacion{
+    margin: 10px;
+}
+#div_nuevo_dispositivo_publicacion span{
+    font-size: 20px;
+}
+#div_botones_publicar_nuevos_dispositivos_info{
+    text-align: right;
+}
+#cont_eliminar_dispositivo_publicacion{
+    display: none;
+}
+#cont_div_eliminar_dispositivo_publicacion{
+    border: solid 1px #CCD1D1;
+    border-radius: 5px;
+    padding: 5px; 
+}
+#div_eliminar_dispositivo_publicacion{
+    margin: 10px;
+}
+#div_eliminar_dispositivo_publicacion span{
+    font-size: 20px;
+}
+#div_botones_publicar_eliminar_dispositivos_info{
+    text-align: right;
+}
+
+#btn_publicar_video_info_aceptar{
+    display: none;
+    border: none;
+    background-color:  #4CAF50;
+}
+#btn_publicar_video_info_cancelar{
+     border: none;
+    background-color: #E74C3C;
+}
+#btn_publicar_video_info_aceptar:hover{
+    background-color: #218838;
+}
+#btn_publicar_video_info_cancelar:hover{
+    background-color:#C3322E;
+}
+#btn_eliminar_video_info_aceptar{
+    display: none;
+}
+.padding{
+    padding-left: 5px;
+}
+/*---------------------------------------------------------*/
+#cont_general_publicaciones_info{
+    width: 80%;
+    margin: auto;
+    display: table;
+}
+/*---------cont_1_general_div_publicaciones_info---------------*/
+#cont_1_general_div_publicaciones_info{
+    float: left;
+    width: 35%;
+}
+#div_videos_publicacion_info{
+    border-radius: 5px;
+    height: 200px;
+    overflow: auto;
+}
+/*
+#div_videos_publicacion_info::-webkit-scrollbar{
+    border-radius: 5px;
+}
+#div_videos_publicacion_info::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #D35400;
+    box-shadow: -5px -2px 0px rgba(186, 74, 0,1) inset;
+}*/
+#div_video_publicacion_info{}
+#div_video_publicacion_info video{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+/*---------cont_2_general_div_publicaciones_info---------------*/
+#cont_2_general_div_publicaciones_info{
+    float: left;
+    width: 60%;
+    margin-left: 5%;
+}
+#cont_1_publicaciones_info{
+    width: 100%;
+}
+#div_1_publicaciones_info{
+    width: 100%;
+}
+#cont_titulo_publicacion_info{
+    width: 100%;
+    background-color: #CCD1D1;
+    padding: 5px;
+    border-radius: 5px;
+}
+#cont_txt_btn_info{
+    border: solid 1px #CCD1D1;
+    border-radius: 5px;
+    padding: 5px;
+    display: table;
+    width: 100%;
+}
+#cont_txt_nombre_publicacion_info{
+    float: left;
+    width: 50%;
+    
+}
+#txt_nombre_publicacion_info{
+    /*text-align: center;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    background-color: transparent;
+    border: solid 1px #CCD1D1;*/
+}
+#cont_btn_nuevo_dispositivo_publicacion{
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: right;
+}
+#cont_btn_nuevo_dispositivo_publicacion button{
+    margin: 3px;
+}
+#btn_nuevo_dispositivo_publicacion{
+    height: 30px;
+    border: none;
+    color: aliceblue;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #3498DB;
+}
+#btn_nuevo_dispositivo_publicacion:hover{
+    background-color: #0486DD ;
+} 
+/*--------------------------*/
+#cont_2_publicaciones_info{
+    width: 100%;   
+}
+#div_2_publicaciones_info{
+    width: 100%;
+}
+#cont_titulo_publicacion_video_info{
+    width: 100%;
+    background-color: #CCD1D1;
+    padding: 5px;
+    border-radius: 5px;
+}
+#cont_publicacion_video_info{
+    border: solid 1px #CCD1D1;
+    border-radius: 5px;
+    padding: 5px;
+}
+#cont_publicacion_video_info span{
+    font-size: 20px;
+}
+/*--------------------------*/
+#cont_3_publicaciones_info{
+    width: 100%;   
+}
+#div_3_publicaciones_info{
+    width: 100%;
+}
+#cont_titulo_publicacion_dispositivo_info{
+    width: 100%;
+    background-color: #CCD1D1;
+    padding: 5px;
+    border-radius: 5px;
+}
+#cont_publicacion_dispositivos_info{
+    border: solid 1px #CCD1D1;
+    border-radius: 5px;
+    padding: 5px;
+}
+#cont_publicacion_dispositivos_info span{
+    font-size: 20px;
+}
+/*--------------------------*/
+#cont_4_publicaciones_info{
+    width: 100%;   
+}
+#div_4_publicaciones_info{
+    text-align: right;
+    margin: 3px;
+}
+#btn_guardar_publicaciones_info{
+    display: none;
+    border: none;
+    background-color:  #4CAF50;
+}
+.eliminar_publicaciones_info{
+    border: none;
+    background-color: #E74C3C;
+}
+#btn_guardar_publicaciones_info:hover{
+    background-color: #218838;
+}
+.eliminar_publicaciones_info:hover{
+    background-color:#C3322E;
+}
+/*----PANTALLA CHICA*/
+@media (max-width: 820px) {
+#cont_general_publicaciones_info{
+    margin-top: 5px;
+}
+#cont_1_general_div_publicaciones_info{
+    float: none;
+    width: 100%;
+}
+#div_videos_publicacion_info{
+    
+}    
+#cont_2_general_div_publicaciones_info{
+    float: none;
+    width: 100%;
+    margin-left: 0;
+}    
+#txt_nombre_publicacion_info{
+    width: 100%;
+}
+#cont_confirmacion_eliminar_publicacion{
+    width: 70%;
+    left: 15%;
+}
+/*-------------------------------------*/
+#cont_txt_nombre_publicacion_info{
+    float: none;
+    width: 100%;
+}
+
+#cont_btn_nuevo_dispositivo_publicacion{
+    float: none;
+    width: 100%;
+}
+/*-------------------------------------*/    
+}

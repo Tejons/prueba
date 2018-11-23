@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+   <%include ../parches/meta%>
+    </head>
+    <body>
+     <div id="cont_general">
+     <%include ../parches_usuario/header_usuario%>
+       <div id="cont_general_perfil_usuario">
+        <div id="cont_1_perfil_usuario">
+            <div id="cont_alerta">
+          
+           <%if(msn.length > 0){%>
+                  <%=msn %>
+           <%}%>
+                 
+       </div>
+             <div id="div_1_perfil_usuario">
+                 <div id="cont_titulo_datos_usuario" class="cont_titulo">
+                     <span>Cuenta activa</span>
+                 </div>
+                 <div class="panel_1 fondo">   
+                     <div id="cont_datos_usuario">
+                        <div id="cont_logo_datos">  
+                            <div id="div_logo_usuario">
+                               <span class="icon-user-circle-o"></span>   
+                            </div>
+                            <div id="div_datos_usuario">
+                               <p><strong><%=user.nombre%></strong>
+                               <br>
+                               <em><%=user.correo%></em>
+                               </p>
+                            </div>
+                        </div>
+                        <span>Usando <%=dispositivos.length%> de <%=dispositivos.length%>  dispositivos disponibles</span>     
+                     </div>
+                     <div id="cont_menu_perfil_usuario">
+                         <ul>
+                             <li><a id="cuenta">Cuenta</a></li>
+                             <li><a id="suscripcion">Suscripción</a></li>
+                             <li><a id="reportes_generados">Facturas generados</a></li>
+                         </ul>
+                     </div>
+                 </div>      
+             </div>
+             <div id="div_2_perfil_usuario">
+               <div id="panel_cuenta">
+                  <div id="cont_titulo_datos_perfil_usuario" class="cont_titulo">
+                   <span>Cuenta</span>
+                  </div>
+                  <div class="panel_2 fondo">
+                     <div class="contenedor_panel_2">
+                        <div class="cont_frm">
+                         <form action="/actualizar_datos_usuario" method="post">
+                         <div class="cont_lbl_txt">
+                             <span class="fz_frm">Nombre</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_cuenta_nombre" name="txt_cuenta_nombre" required value="<%=usuario[0].nombre_usuario%>" class="txt_panel">
+                             </div>
+                         </div>
+                         <div class="cont_lbl_txt">
+                             <span class="fz_frm">Correo</span>
+                             <div class="div_txt">
+                                 <input type="email" id="txt_cuenta_correo" name="txt_cuenta_correo" required value="<%=usuario[0].correo_usuario%>" class="txt_panel">
+                             </div>
+                         </div>
+                         <div class="cont_lbl_txt">
+                            <span class="fz_frm">Contraseña</span>
+                             <div class="div_txt">
+                                 <input type="password" id="txt_cuenta_contrasena" required value="<%=usuario[0].contrasena_usuario.slice(0,-50)%>" class="txt_panel" autocomplete="new-password">
+                             </div>
+                         </div>
+                         <div class="cont_lbl">
+                             <span>Cuenta registrada el <strong><%=usuario[0].fecha_creacion_usuario%></strong></span>
+                             <br>
+                             <span>Dispositivos disponibles <strong><%=dispositivos.length%></strong></span>
+                         </div>
+                         <div class="cont_btn_perfil_usuario">
+                             <button type="submit" class="btn btn_update" id="btn_actualizar_perfil_usuario">Actualizar datos</button>
+                             <button  type="button" class="btn btn_delete" id="btn_eliminar_perfil_usuario">Eliminar cuenta</button>
+                         </div>
+                        </form>
+                     </div>
+                     </div>     
+                  </div>
+               </div>  
+               <div id="panel_suscripcion">
+                   <div class="cont_titulo">
+                       <span>Suscripción</span>
+                   </div>
+                   <div class="panel_2 fondo">
+                      <div class="contenedor_panel_2">
+                          <div class="cont_frm">
+                             <div>
+                                 <div>
+                                    <div class="margin">   
+                                        <div class="">
+                                           <div>
+                                               <span>Suscripción actual</span>
+                                           </div>
+                                           <span>Dispositivos <%=usuario[0].dispositivos_disponibles%> x <%=suscripcion[0].tipo_suscripcion%> $<%=suscripcion[0].precio_suscripcion%></span><br>
+                                           <span>Pago = $<%=suscripcion[0].precio_suscripcion * usuario[0].dispositivos_disponibles%></span>
+                                        </div>
+                                    <!--<div class="">
+                                           <span>Agregar mas dispositivos</span>
+                                           <div>
+                                               <span class="borde">N°</span> <i id="suscrpcion_mas" class="icon-plus"></i> <i id="suscrpcion_menos" class="icon-minus"></i>
+                                                <span id="igual">total =</span>
+                                           </div>
+                                        </div>--> 
+                                     </div>
+                                 <!--<div>
+                                         
+                                     </div>
+                                     <div id="cont_btn_suscripcion">
+                                         <button class="btn btn_update">Solicitar</button>
+                                     </div>-->
+                                 </div>
+                             </div>
+                             <div id="cont_facturacion">
+                                 <div class="cont_titulo">
+                                     <span>Información de facturación</span>
+                                 </div>
+                                 <div>
+                                     <div class="mg-t-5">
+                                         <strong>Nombre de la empresa: <%if(datosfactura.length > 0){%>
+                                                                           <%=datosfactura[0].nombre_compania %>
+                                                                       <%}%></strong>
+                                         <br>
+                                         <strong>Código de facturació fiscal: <%if(datosfactura.length > 0){%>
+                                                                                  <%=datosfactura[0].identificador_impuesto %>  
+                                                                              <%}%></strong>
+                                         <br>
+                                         <strong>Dirección: <%if(datosfactura.length > 0){%>
+                                                                <%=datosfactura[0].calle_usuario%>,
+                                                                <%=datosfactura[0].numero_usuario%>,
+                                                                <%=datosfactura[0].colonia_usuario%>
+                                                                <br>
+                                                                <%=datosfactura[0].ciudad_usuario%>,
+                                                                <%=datosfactura[0].estado_usuario%>,
+                                                                <%=datosfactura[0].codigo_postal_usuario%>
+                                                            <%}%>
+                                         </strong>
+                                     </div>
+                                     <%if (datosfactura.length > 0) {%>
+                                          <div id="cont_btn_editar_factura">
+                                             <i id="btn_editar_datos_facturacion" class="icon-edit btn btn_update"></i>
+                                          </div>
+                                     <%}%>
+                                 </div>
+                             </div>     
+                          </div>
+                      </div>
+                   </div>
+                   <div id="cont_btn_facturar">
+                       <button type="button" id="btn_facturar" class="btn btn_accept">Facturar</button>
+                   </div>
+               </div>
+               <div id="panel_reportes_generados">
+                   <div class="cont_titulo">
+                       <span>Facturas generadas</span>
+                   </div>
+                   <div class="panel_2 fondo">
+                      <div class="contenedor_panel_2">
+                         <div class="cont_frm">
+                            <div class="contenedor_en_linea">
+                                <div><span><strong>Nombre</strong></span></div>
+                                <div><span><strong>Fecha</strong></span></div>
+                                <%if (factura) {%>
+                                    <% for (var i=0; i <factura.length; i++){%>
+                                         <li class="lifacturapagada"> <span class=""><%=factura[i].nombre_factura_usuario%></span><span> <%=factura[i].fecha_creacion_factura_usuario%></span></li>
+                                    <%}%>
+                                <%}%>
+                            </div>     
+                         </div>
+                      </div>
+                   </div>
+               </div>
+             </div>
+        </div>
+        <div id="cont_factura_cuenta">
+         <div id="div_factura_cuenta">
+             <div class="cont_frm">
+                <form action="/registrar_datos_factura" method="post">
+                  <fieldset>
+                      <legend>Información de facturación</legend> 
+                         <div class="cont_frm_factura contenedor_en_linea">
+                         <div id="cont_informacion_empresa">
+                          <div class="cont_titulo">
+                              <span>Informacion de compañia</span>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Nombre de la compañia / Nombre completo</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_nombre_compania_factura" name="txt_nombre_compania_factura" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Identificador del impuesto</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_impuesto_factura" name="txt_impuesto_factura" required class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                            <span class="fz_frm">Telefono</span>
+                             <div class="div_txt">
+                                 <input type="tel" id="txt_telefono_factura" name="txt_telefono_factura" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Correo de facturación</span>
+                             <div class="div_txt">
+                                 <input type="email" id="txt_correo_factura" name="txt_correo_factura" value="<%=user.correo%>"required  class="txt_panel" >
+                             </div>
+                          </div>
+                          </div>
+                          <div id="cont_informacion_factura">
+                          <div class="cont_titulo">
+                              <span>Direccion de facturación</span>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Calle</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_calle_factura" name="txt_calle_factura" required  class="txt_panel">
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Numero</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_numero_factura" name="txt_numero_factura" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Colonia</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_colonia_factura" name="txt_colonia_factura" required  class="txt_panel">
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Ciudad</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_ciudad_factura" name="txt_ciudad_factura" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Estado/Provincia</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_estado_factura" name="txt_estado_factura" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Codigo postal</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_codigo_postal_factura" name="txt_codigo_postal_factura" required class="txt_panel" >
+                             </div>
+                          </div>
+                          </div>
+                         </div>      
+                   <div id="confirmacion_btn_factura_cuenta">
+                       <button type="submit" id="btn_confirmacion_aceptar_factura_cuenta" class="btn btn_accept">Aceptar</button>
+                       <button type="button" id="btn_confirmacion_cencelar_factura_cuenta" class="btn btn_cancel">Cancelar</button>
+                   </div>
+                  </fieldset>    
+                </form>   
+             </div>
+         </div>
+        </div>
+        <div id="cont_factura_cuenta_update">
+         <div id="div_factura_cuenta_update">
+             <div class="cont_frm">
+                <form action="/actualizar_datos_factura" method="post">
+                  <fieldset>
+                      <legend>Actualizar nformación de facturación</legend> 
+                         <div class="cont_frm_factura contenedor_en_linea">
+                         <div id="cont_informacion_empresa">
+                          <div class="cont_titulo">
+                              <span>Informacion de compañia</span>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Nombre de la compañia / Nombre completo</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_nombre_compania_factura_update" name="txt_nombre_compania_factura_update" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Identificador del impuesto</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_impuesto_factura_update" name="txt_impuesto_factura_update" required class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                            <span class="fz_frm">Telefono</span>
+                             <div class="div_txt">
+                                 <input type="tel" id="txt_telefono_factura_update" name="txt_telefono_factura_update" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Correo de facturación</span>
+                             <div class="div_txt">
+                                 <input type="email" id="txt_correo_factura_update" name="txt_correo_factura_update" value="<%=user.correo%>"required  class="txt_panel" >
+                             </div>
+                          </div>
+                          </div>
+                          <div id="cont_informacion_factura">
+                          <div class="cont_titulo">
+                              <span>Direccion de facturación</span>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Calle</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_calle_factura_update" name="txt_calle_factura_update" required  class="txt_panel">
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Numero</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_numero_factura_update" name="txt_numero_factura_update" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Colonia</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_colonia_factura_update" name="txt_colonia_factura_update" required  class="txt_panel">
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Ciudad</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_ciudad_factura_update" name="txt_ciudad_factura_update" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Estado/Provincia</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_estado_factura_update" name="txt_estado_factura_update" required  class="txt_panel" >
+                             </div>
+                          </div>
+                          <div class="cont_lbl_txt">
+                             <span class="fz_frm">Codigo postal</span>
+                             <div class="div_txt">
+                                 <input type="text" id="txt_codigo_postal_factura_update" name="txt_codigo_postal_factura_update" required class="txt_panel" >
+                             </div>
+                          </div>
+                          </div>
+                         </div>      
+                   <div id="confirmacion_btn_factura_cuenta">
+                       <button type="submit" id="btn_confirmacion_aceptar_factura_cuenta_update" class="btn btn_accept">Actualizar</button>
+                       <button type="button" id="btn_confirmacion_cencelar_factura_cuenta_update" class="btn btn_cancel">Cancelar</button>
+                   </div>
+                  </fieldset>    
+                </form>   
+             </div>
+         </div>
+        </div>
+        <div id="cont_nueva_contrasena_perfil_usuario">
+         <div id="cont_confirmacion_nueva_contrasena_perfil_usuario">
+             <div id="confirmacion_nueva_contrasena_perfil_usuario">
+                 <form action="/actualizar_contrasena_usuario" method="post">
+                   <fieldset>
+                       <legend>Cambiar contraseña</legend>
+                    <div class="div_txt_contrasena">
+                        <span class="fz_frm">Contraseña actual</span>
+                        <div><input type="password" id="txt_contrasena" name="txt_contrasena" autocomplete="new-password" class="txt_panel"></div>
+                        <span class="fz_frm">Nueva contraseña</span>
+                        <div><input type="password" id="txt_nueva_contrasena" name="txt_nueva_contrasena" autocomplete="new-password" class="txt_panel"></div>
+                        <span class="fz_frm">Nueva contraseña(confirmación)</span>
+                        <div><input type="password" id="txt_conf_contrasena" name="txt_conf_contrasena" autocomplete="new-password" class="txt_panel"></div>
+                    </div>
+                <div id="confirmacion_btn_nueva_contrasena_perfil_usuario" class="div_txt_contrasena">
+                    <button type="submit" id="btn_confirmacion_aceptar_nueva_contrasena_perfil_usuario" class="btn btn_accept">Aceptar</button>
+                    <button type="button" id="btn_confirmacion_cancelar_nueva_contrasena_perfil_usuario" class="btn btn_cancel">Cancelar</button>
+                </div>
+               </fieldset>  
+              </form>     
+             </div>
+         </div>
+        </div>
+        <div id="cont_2_perfil_usuario">
+         <div id="cont_confirmacion_eliminar_cuenta">
+             <div id="confirmacion_eliminar_cuenta">
+                   <div id="seguro_span_perfil_usuario">
+                       <span>¿Seguro de eliminar la cuenta?</span>
+                       <p>Se borrara todo el contenido(videos,publicaciones,dispositivos) y todos los datos de la cuenta</p>
+                   </div>
+                   <div id="confirmacion_btn_perfil_usuario">
+                       <a href="/eliminar_usuario/<%=usuario[0].id_usuario%>"><button type="button" id="btn_confirmacion_aceptar_eliminar_cuenta" class="btn btn_accept">Aceptar</button></a>
+                       <button type="button" id="btn_confirmacion_cancelar_eliminar_cuenta" class="btn btn_cancel">Cancelar</button>
+                   </div>  
+             </div>
+         </div>
+        </div>   
+       </div>          
+     </div>
+     <% include ../parches/footer%> 
+    </body>
+<%include ../parches/script%>
+<script type="text/javascript" src="/js/usuario/perfil_usuario/perfil_usuario.js"></script>
+<!--<%include ../parches/script%>-->
+</html> 

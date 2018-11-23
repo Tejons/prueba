@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>AcaNunciate</title>
+    <% include parches/meta%>
+  </head>
+    <body class="textura_ladrillo">
+      <div id="cont_general">
+        <div id="">
+             <header class="textura_ladrillo">
+                 <div id="cont_logo_login_usuario">
+                    <a href="/">
+                        <div id="">
+                            <img src="/imagenes/acalogofinalSFF-4.png">
+                        </div>
+                     </a>      
+                 </div>
+              </header>    
+        </div>
+        <div id="cont_general_restablecer_contrasena">
+            <div id="cont_restablecer_contrasena">
+              <form action="/restablecer_contrasena" method="post">
+                <div id="titulo_restablecer_contrasena">
+                    <h1>¿Seguro de estó?</h1>
+                </div>
+                <div>
+                    <p>Se generara una contraseña nueva y se enviara al correo que se dio de alta en la cuenta. Procura cambiar la contraseña cuando ingreses nuevamente.</p>
+                </div>
+                <div id="div_txt_correo_restablecer_contrasena">
+                    <input id="txt_correo_restablecer_contrasena" type="emal" name="correo_usuario_contrasena_restablecer_contrasena" placeholder="Ingrese el correo registrado en la cuenta">
+                </div>
+                <div id="div_btn_aceptar_restablecer_contrasena">
+                    <button type="submit" class="btn btn_accept">Aceptar</button>
+                </div>
+              </form>
+            </div>
+        </div>
+      
+      </div>
+    </body>
+ <% include parches/footer%>  
+ <% include parches/script%> 
+</html>

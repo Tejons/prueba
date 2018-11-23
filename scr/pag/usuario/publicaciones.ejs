@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+		<%include ../parches/meta%>
+    </head>
+    <body>
+    <div id="cont_general" class="wrapper">
+    <%include ../parches_usuario/header_usuario%>
+     <div id="cont_btn_publicar_video">
+         <button id="btn_publicar_video"><span class="icon-pencil"></span> Publicar video</button>
+     <div id="cont_alerta">
+        <%if(msn.length > 0){%>
+               <%=msn %>
+        <%}%>      
+     </div>
+     </div>
+     <div id="cont_general_publicar_video">
+     <div id="cont_general_videos_publicar">
+             <ul id="lista_videos_publicar">
+                 <%if(contenido.length > 0){%>
+                     <%for(var i=0; i < contenido.length; i++){%> 
+                         <li id="li<%=contenido[i].nombre_video_usuario.slice(0,-4)%>" class="fondo"><div id="div_videos_publicar" class=""><video src="/video/<%=user.correo%>/<%=contenido[i].nombre_video_usuario%>"  width="150"></video><div class="cont_btn_publicaciones"><label id="<%=contenido[i].id_video_usuario%>"><%=contenido[i].nombre_video_usuario.replace(/_/g," ").slice(0,-4)%></label><span id="<%=contenido[i].id_video_usuario%>" class="publicar_video  icon-file-powerpoint-o"></span></div></div></li>
+                    <%}%>
+                <%}%>
+             </ul>
+     </div>
+     </div>
+     <div id="cont_videos_publicados">
+             <div id="cont_titulo_publicados">
+             <span id="titulo_publicados">Publicaciones realizadas <strong id="videosPublicados"># <%=publicacion.length%></strong></span>
+             </div>
+             <div id="cont_video_publicado">
+                      <ul id="lista_videos_publicacion">
+                          <%if(publicacion.length > 0){%>
+                              <%for(var i=0; i < publicacion.length; i++){%>
+                                 
+                                  <li id="li<%=publicacion[i].nombre_video_usuario.slice(0,-4)%>" class="fondo"><div id="div_videos_publicados" class=""><video src="/video/<%=user.correo%>/<%=publicacion[i].nombre_video_usuario%>" width="300" poster="/imagenes/publicacion.png"></video><div class="cont_btn_publicados"><label id="<%=publicacion[i].id_video_dispositivo_usuario%>"><%=publicacion[i].nombre_video_dispositivo_usuario%></label><a href="publicaciones/info/<%=publicacion[i].nombre_video_dispositivo_usuario%>"><span id="<%=publicacion[i].id_video_dispositivo_usuario%>" class="info_publicacion  icon-info-circle"></span></a></div></div></li>
+                        
+                            <%}%>
+                           <%}%>
+                     </ul>
+         </div>
+     </div>
+     <div id="cont_general_formulario_publicar_video">
+        <div id="cont_formulario_publicar_video">
+           <div id="formulario_publicar_video">
+            <div id="div_seleccionar_dispositivo">
+                <span>Dispositivos disponibles</span>
+            </div>
+            <div id="div_dispositivos_registrados">
+             <%if (data) {%>
+                <% for (var i=0; i < data.length; i++){%>
+                  <span id="<%=data[i].id_dispositivo_usuario%>disp" class="icon-circle-thin select_dispositivo"></span>
+                  <span id="span_nombre_dispositivo_publicar"><%=data[i].nombre_dispositivo_usuario%></span>
+                  
+               <%}%>
+             <%}%>
+            </div>
+            <div id="cont_nombres_publicaciones">
+                <div id="div_titulo_publicaciones_existentes">
+                    <span>Publicaciones existentes</span>
+                </div>
+                <div id="div_publicaciones_existentes">
+                    <%if (publicacion.length > 0) {%>  
+                       <% for (var i=0; i < publicacion.length; i++){%>
+                         <span id="<%=publicacion[i].nombre_video_dispositivo_usuario%>publ" class="icon-square-o select_publicacion"></span>
+                         <span id="span_nombre_dispositivo_publicar"><%=publicacion[i].nombre_video_dispositivo_usuario%></span>
+                  
+                      <%}%>
+                    <%}else{%>
+                         <span id="lbl_sin_publicaciones">No hay publicaciones</span>
+                    <%}%>  
+                </div>
+            </div>
+            <div id="div_nombre_nueva_publicacion">
+                <span class="lbl_nombre_nueva_publicacion">Nueva publicación <span  class="icon-sort-desc"></span></span>
+            </div>
+            <div id="cont_nombre_nueva_publicacion">
+                <div id="div_nombre_publicacion">
+                      <span>Nombre de la nueva publicación</span>
+                      <input type="text" id="txt_nombre_publicacion">
+                  </div>
+            </div>      
+            <div id="div_botones_publicar">
+                <button id="btn_publicar_video_aceptar" class="confirmacion_btn"><span class="icon-"></span> Publicar</button>
+                <button id="btn_publicar_video_cancelar" class="confirmacion_btn"><span class="icon-"></span> Cancelar</button>
+            </div>
+        </div>
+        </div> 
+     </div>
+     </div>
+     <%include ../parches/footer%>
+    </body>
+<%include ../parches/script%>
+<script type="text/javascript" src="/js/usuario/publicaciones/publicaciones.js"></script>
+<script type="text/javascript" src="/js/usuario/publicaciones/main_publicaciones.js"></script>
+</html> 

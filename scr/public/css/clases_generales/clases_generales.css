@@ -1,0 +1,60 @@
+/*FONDOS TEXTURAS*/
+/* Background pattern from Toptal Subtle Patterns */
+.textura_ladrillo{
+    /*background-image: url(/imagenes/country-quilt-dark.png);*/
+    background-image: url(/imagenes/dark_brick_wall_@2X.png);
+}
+.textura_linea{
+    /*background-image: url(/imagenes/country-quilt-dark.png);*/
+    background-image: url(/imagenes/black_linen_v2_@2X.png);
+}
+.textura_gusanitos{
+    /*background-image: url(/imagenes/country-quilt-dark.png);*/
+    background-image: url(/imagenes/pw_maze_black_@2X.png);
+}
+/*BOTONES GENERALES*/
+.btn{
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    color: aliceblue;
+    padding: 5px;
+}
+
+.btn_new{
+    background-color: #D35400;
+}
+.btn_accept{
+    background-color:  #4CAF50;
+}
+.btn_cancel{
+    background-color: #E74C3C;
+}
+.btn_update{
+    background-color: #3498DB;
+}
+.btn_delete{
+    background-color: #E74C3C;
+}
+/*HOVER*/
+.btn_new:hover{
+    cursor: pointer;
+    background-color: #A04000;
+}
+.btn_accept:hover{
+    cursor: pointer;
+    background-color: #218838;
+}
+.btn_cancel:hover{
+    cursor: pointer;
+    background-color:#C3322E;
+}
+.btn_update:hover{
+    cursor: pointer;
+    background-color: #0486DD ;
+}
+.btn_delete:hover{
+    cursor: pointer;
+    background-color:#C3322E;
+}
+/*---------------------------*/

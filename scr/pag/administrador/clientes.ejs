@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+        <% include ../parches/meta%>
+    </head>
+<body>
+    <div id="cont_general">
+        <%include ../parches_administrador/header_administrador%>
+        <div id="cont_general_clientes">
+            <div id="cont_1_clientes">
+                <div class="cont_titulo">
+                    <apn>Solicitudes de informacion</apn>
+                </div>
+                <div id="cont_alerta">
+                   <%if(msn.length > 0){%>
+                      <%=msn %>
+                   <%}%>
+                </div>
+            </div>
+            <div id="cont_2_clientes">
+                <div id="cont_tabla_clientes">
+                    <table id="tabla_clientes">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Telefono</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <%if(clientes.length > 0){%>
+                        <%for(var i=0; i < clientes.length; i++){%>
+                        <tbody>
+                            <tr>
+                                <td class="sub_th"><strong>N° </strong>
+                                    <%=i+1%>
+                                </td>
+                                <td id="td_n">
+                                    <%=i+1%>
+                                </td>
+                                <th class="sub_th">Nombre</th>
+                                <td>
+                                    <%=clientes[i].nombre_cliente%>
+                                </td>
+                                <th class="sub_th">Correo</th>
+                                <td>
+                                    <%=clientes[i].correo_cliente%>
+                                </td>
+                                <th class="sub_th">Telefono</th>
+                                <td>
+                                    <%=clientes[i].telefono_cliente%>
+                                </td>
+                                <th class="sub_th">Estado</th>
+                                <td>
+                                    <%=clientes[i].estado_cliente%>
+                                </td>
+                                <td><a href="/eliminar_solicitud_cliente/<%=clientes[i].id_cliente%>"><button type="button" class="btn btn_delete">Eliminar</button></a></td>
+                            </tr>
+                            <%}%>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include ../parches/footer%>
+</body>
+    <% include ../parches/script%>
+    <script type="text/javascript" src="/js/administrador/clientes/clientes.js"></script>
+</html>

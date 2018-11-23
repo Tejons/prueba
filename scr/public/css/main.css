@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('principal/header.css');
+@import url('principal/principal.css');
+@import url('leaflet/leaflet.css');
+@import url('restablecer_contrasena/restablecer_contrasena.css');
+/*@import url('leaflet/route-machine/leaflet-routing-machine.css');*/
+
+@import url('registro_exitoso/registro_exitoso.css');
+
+@import url(menu.css);
+@import url(clases_generales/clases_generales.css);
+@import url(iconos/iconos.css);
+@import url(footer/footer.css);
+@import url(login/login.css);
+
+@import url(registro/registro.css);
+@import url(alertas/alertas.css);
+
+@import url(administrador/solicitudes/solicitudes.css);
+@import url(administrador/usuarios/usuarios.css);
+@import url(administrador/suscripciones/suscripciones.css);
+@import url(administrador/clientes/clientes.css);
+@import url(administrador/editar_usuario/editar_usuario.css);
+
+@import url(usuario/contenido/subir_archivo.css);
+@import url(usuario/contenido/cont_video.css);
+@import url(usuario/contenido/confirmacion_eliminar.css);
+@import url(usuario/dispositivos/cont_botones.css);
+@import url(usuario/dispositivos/cont_dispositivos.css);
+@import url(usuario/dispositivos/registro_dispositivo.css);
+@import url(usuario/publicaciones/publicaciones.css);
+@import url(usuario/publicaciones/publicaciones_info.css);
+@import url(usuario/dispositivos/dispositivos_info.css);
+@import url(usuario/perfil_usuario/perfil_usuario.css);
+
+*{
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-image: url(/imagenes/black_linen_v2_@2X.png);
+}
+#cont_general{
+    min-height: 96.5vh;
+    /*font-family: 'Quicksand', sans-serif;*/
+}
+.fondo{
+    background-color: rgba(51,51,51,.8);
+}

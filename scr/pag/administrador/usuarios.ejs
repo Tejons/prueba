@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>AcaNunciate</title>
+    <% include ../parches/meta%>
+</head>
+
+<body>
+
+    <div id="cont_general">
+        <%include ../parches_administrador/header_administrador%>
+        <div id="cont_1_usuarios">
+            <div id="cont_confirmacion_eliminar_usuario">
+                <div id="confirmacion_eliminar_usuario">
+                    <div id="seguro_span_usuario">
+                        <span>¿Seguro de eliminar el usuario?</span>
+                    </div>
+                    <div id="confirmacion_botones_usuario">
+                        <span id="confirmacion_aceptar_usuario"><button id="btn_confirmacion_aceptar_usuario" class="confirmacion_btn">Aceptar</button></span>
+                        <span id="confirmacion_cancelar_usuario"><button id="btn_confirmacion_cancelar_usuario" class="confirmacion_btn">Cancelar</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cont_2_usuarios">
+            <div>
+
+            </div>
+            <div id="cont_usuarios">
+                <div id="usuarios">
+                    <div id="cont_titulo_lista">
+                        <span>Usuarios registrados</span>
+                    </div>
+                    <div id="cont_buscar_usuario">
+                        <div id="div_numero_usuarios">
+                            <span>Numero de usuarios registrados #
+                                <%=usuarios.length%></span>
+                        </div>
+                        <div id="cont_buscar_usuario_txt_btn">
+                            <div id="div_txt_buscar_usuario">
+                                <input type="text" id="txt_buscar_usuario" placeholder="Buscar por nombre o correo">
+                            </div>
+                            <div id="div_boton_buscar_usuario">
+                                <button type="button" id="btn_buscar_usuario"><span class="icon-search"></span></button>
+                            </div>
+                        </div>   
+                            
+                    </div>
+                    <div id="cont_alerta">
+                       <%if(msn.length > 0){%>
+                              <%=msn %>
+                       <%}%>
+                    </div>
+                    <div id="cont_tabla_usuarios">
+                        <table id="tabla_usuarios">
+                            <%if(usuarios.length > 0){%>
+                            <tbody>
+                                <thead>
+                                    <tr>
+                                        <th>N°</th>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Dispositivos disponibles</th>
+                                        <th>Fecha de registro</th>
+                                        <th>Validación</th>
+                                        <th>Ultima conexión</th>
+                                    </tr>
+                                </thead>
+                                <%for(var i=0; i < usuarios.length; i++){%>
+                                <tr id="tr<%=usuarios[i].id_usuario%>" class="filas">
+                                    <td class="sub_th"><strong>N° </strong>
+                                        <%=i+1%>
+                                    </td>
+                                    <td id="td_n">
+                                        <%=i+1%>
+                                    </td>
+                                    <th class="sub_th">Nombre</th>
+                                    <td>
+                                        <%=usuarios[i].nombre_usuario%>
+                                    </td>
+                                    <th class="sub_th">Correo</th>
+                                    <td id="td<%=usuarios[i].id_usuario%>">
+                                        <%=usuarios[i].correo_usuario%>
+                                    </td>
+                                    <th class="sub_th">Dispositivos disponibles</th>
+                                    <td class="tdcentrado">
+                                        <%=usuarios[i].dispositivos_disponibles%>
+                                    </td>
+                                    <th class="sub_th">Fecha de registro</th>
+                                    <td>
+                                        <%=usuarios[i].fecha_creacion_usuario%>
+                                    </td>
+                                    <th class="sub_th">Validación</th>
+                                    <td class="tdcentrado">
+                                        <%=usuarios[i].validacion_usuario%>
+                                    </td>
+                                    <th class="sub_th">Ultima conexión</th>
+                                    <td>
+                                        <%=usuarios[i].fecha_ingreso_usuario%>
+                                    </td>
+                                    <td><a href="/editar_usuario/<%=usuarios[i].id_usuario%>"><button type="button" class="btn_editar_usuario" id="<%=usuarios[i].id_usuario%>">Editar</button></a></td>
+                                    <td><button type="button" class="btn_eliminar_usuario" id="<%=usuarios[i].id_usuario%>">Eliminar</button></td>
+                                </tr>
+                                <%}%>
+                                <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <% include ../parches/footer%>
+</body>
+<% include ../parches/script%>
+<script type="text/javascript" src="/js/sesion_activa_administrador.js"></script>
+<script type="text/javascript" src="/js/administrador/usuarios/usuarios.js"></script>
+
+</html>

@@ -1,0 +1,95 @@
+
+.txt_admin{
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+.div_btn{
+    margin: 5px;
+}
+.div_contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+.div_contenedor:hover{
+    background-color: rgba(0,0,0,.5);
+}
+.w30{
+    width: 30%;
+    margin: 3px;
+}
+
+#cont_btn_nueva_suscripcion{
+    margin: 3px;
+}
+#cont_suscripciones{
+    text-align: center;
+    color: white;
+}
+#cont_form_nueva_suscripcion{
+    text-align: center;
+    color: white;
+    display: none;
+}
+#cont_4_suscripcion_update{
+    display: none;
+}
+#cont_form_suscripcion_update{
+    text-align: center;
+    color: white;
+}
+#txt_tipo_suscripcion_update{}
+#txt_precio_suscripcion_update{}
+
+/*PANTALLA CHICA*/
+@media (max-width: 820px) {
+    #cont_general_suscripcion{
+        width: 90%;
+        margin: auto;
+    }
+    #cont_4_suscripcion_update{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(51,51,51,.7);
+        
+    }
+    #cont_form_suscripcion_update{
+        position: absolute;
+        width: 70%;
+        top: 30%;
+        left: 15%;
+        border-radius: 5px;
+        background-color: rgba(51,51,51,1);
+    }
+}
+/*PANTALLA GRANDE*/
+@media (min-width: 820px) {
+    
+    #cont_general_suscripcion{
+        width: 80%;
+        margin: auto;
+    }
+    #cont_4_suscripcion_update{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(51,51,51,.7);
+        
+    }
+    #cont_form_suscripcion_update{
+        position: absolute;
+        width: 30%;
+        top: 30%;
+        left: 35%;
+        border-radius: 5px;
+        background-color: rgba(51,51,51,1);
+    }
+    
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+   <%include ../parches/meta%>
+    </head>
+    <body>
+     <div id="cont_general">
+     <%include ../parches_usuario/header_usuario%>
+     <div>
+         <div id="cont_general_subir_archivo">
+              <div id="cont_subir_archivo">   
+                <div id="cont_btn_subir_archivo">    
+                  <button id="btn_subir_archivo" type="button"><span class="icon-cloud-upload"></span> Subir archivo</button> 
+                </div>
+                <div id="cont_progress_bar">
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar"></div>
+                  </div>
+                </div>
+                 <div id="cont_alerta">
+                 </div>
+                  <input id="upload-input" type="file" name="uploads[]" multiple="multiple">
+              </div>   
+         </div>
+         <div class="home">
+            <div id="div_titulo_contenido">
+              <strong><span class="icon-home"></span></strong><span> Videos cargados</span>
+            </div>  
+            <div id="cont_general_videos">
+              <div id="cont_videos">
+                <div id="c_video">
+                   <ul id="lista_videos">
+                       <%if(contenido.length > 0){%>
+                                 <%for(var i=0; i < contenido.length; i++){%> 
+                                       <li id="li<%=contenido[i].nombre_video_usuario.slice(0,-4)%>"><div id="div" class=""><video src="video/<%=user.correo%>/<%=contenido[i].nombre_video_usuario%>" controls width="150" height="150" class="videohover"></video><div class="cont_btn"><label id="<%=contenido[i].id_video_usuario%>"><%=contenido[i].nombre_video_usuario.replace(/_/g," ").slice(0,-4)%></label><span id="<%=contenido[i].id_video_usuario%>" class="eliminar_contenido  icon-trash-o"></span></div></div></li>
+                                 <%}%>
+                            <%}%>
+                   </ul>
+                </div>
+              </div>
+            </div>
+         </div>
+     </div>
+     <div id="cont_5_contenido">
+         <div id="cont_confirmacion_eliminar_contenido">
+             <div id="confirmacion_eliminar_contenido">
+                <div id="seguro_span_contenido">
+                    <span><strong>¿Seguro de eliminar el video?</strong></span>
+                    <span>El video se eliminara de todos los dispositivos en los que se publicó</span>
+                </div>
+                <div id="confirmacion_botones_contenido">
+                    <span id="confirmacion_aceptar_contenido"><button id="btn_confirmacion_aceptar_contenido" class="confirmacion_btn">Aceptar</button></span>
+                    <span id="confirmacion_cancelar_contenido"><button id="btn_confirmacion_cancelar_contenido" class="confirmacion_btn">Cancelar</button></span>
+                </div>
+             </div>
+         </div>
+     </div>         
+     </div>
+     <%include ../parches/footer%> 
+    </body>
+<%include ../parches/script%>
+<script type="text/javascript" src="/js/usuario/contenido/contenido.js"></script>
+<script type="text/javascript" src="/js/usuario/contenido/ver_contenido.js"></script>
+<script type="text/javascript" src="/js/usuario/contenido/eliminar_contenido.js"></script>
+<!--<%include ../parches/script%>-->
+</html>

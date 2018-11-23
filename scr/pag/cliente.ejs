@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <title>AcaNunciate</title>
+        <% include parches/meta%>
+    </head>
+    <body class="textura_ladrillo">
+      <div id="cont_general">
+        <div id="">
+             <header class="textura_ladrillo">
+                 <div id="cont_logo_login_usuario">
+                    <a href="/">
+                        <div id="">
+                            <img src="/imagenes/acalogofinalSFF-4.png">
+                        </div>
+                     </a>      
+                 </div>
+              </header>    
+        </div>
+        <div id="cont_general_login">       
+          <div id="cont_login">
+          <div id="login">
+            <div id="titulo_login">
+              <h1>Solicita información</h1>
+              <hr>
+            </div>
+                  <div id="cont_alerta_login">
+                  <%if(msn.length > 0){%>
+                  <div class="error">
+                  <%=msn %>
+                  </div>
+                  <%}%>
+             </div>
+                <div id="cajas_login">
+                    <form action="/registro_cliente" method="post" >
+                        <label for="correo" class="l-cajas">Nombre completo</label>
+                        <input type="text" id="txt_nombre_cliente" class="cajas" name="txt_nombre_cliente" required>
+                        <label for="correo" class="l-cajas">Correo electrónico</label>
+                        <input type="email" id="txt_correo_cliente" class="cajas" name="txt_correo_cliente" required>
+                        <label for="contrasena" class="l-cajas">Telefono</label>
+                        <input type="tel" id="txt_telefono_cliente" class="cajas" name="txt_telefono_cliente" required>
+                        <span class="l-contra"><a href="#">! Nos pondremos en contacto ¡</a></span>
+                        <input type="submit" value="Enviar" id="entrar" class="btn btn_new">
+                    </form>
+                </div>
+             <div id="cuenta_login">
+                 <label for="" class="l-nuevo">¿Nuevo aquí?</label>
+                 <span class="l-nuevo"><a href="/"><strong>Gracias</strong></a></span>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <% include parches/footer%>
+    </body>  
+<% include parches/script%>  
+</html>
+ 

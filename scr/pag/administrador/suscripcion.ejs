@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+        <% include ../parches/meta%>
+    </head>
+    <body>
+       <div id="cont_general">
+        <%include ../parches_administrador/header_administrador%>
+          <div id="cont_general_suscripcion">
+             <div id="cont_1_suscripcion">
+                <div id="cont_btn_nueva_suscripcion">
+                    <div id="div_btn_nueva_suscripcion">
+                        <button type="button" id="btn_nueva_suscripcion" class="btn btn_new" ><span class="icon-plus"></span> Nueva suscripcion</button>
+                    </div>
+                </div>
+            <div id="cont_alerta">
+                <%if(msn.length > 0){%>
+                  <%=msn %>
+                <%}%>
+            </div>
+             </div>
+             <div id="cont_2_suscripcion">
+                 <div>
+                   <div id="cont_form_nueva_suscripcion">
+                       <form action="/registrar_suscripcion" method="post">
+                          <div>
+                           <div>
+                               <h3>Nueva suscripción</h3>
+                           </div>
+                           <div>
+                               <span>Tipo de suscripcion</span>
+                               <div>
+                                   <input type="text" id="txt_tipo_suscripcion" name="txt_tipo_suscripcion" class="txt_admin" required>
+                               </div>
+                           </div>
+                           <div>
+                               <span>Precio</span>
+                               <div>
+                                   <input type="text" id="txt_precio_suscripcion" name="txt_precio_suscripcion" class="txt_admin" required>
+                               </div>
+                           </div>
+                           <div class="div_btn">
+                               <button id="" type="submit" class="btn btn_accept">Agregar</button>
+                           </div>
+                          </div>
+                       </form>
+                   </div>
+                 </div>
+             </div>
+             <div id="cont_3_suscripcion">
+                 <div class="cont_titulo">
+                     <span>Suscripciones</span>
+                 </div>
+                 <div id="cont_suscripciones">
+                   <div class="div_contenedor">
+                      <div class="w30">
+                          <span>Tipo suscripcion</span>
+                      </div>
+                      <div class="w30">
+                          <span>Precio</span>
+                      </div>
+                      <div class="w30">
+                          <span>Opciones</span>
+                      </div>
+                       
+                   </div>
+                     <%if(suscripciones.length > 0){%>
+                         <%for(var i=0; i < suscripciones.length; i++){%>
+                            <div class="lifacturapagada div_contenedor">
+                               <div class="w30"><%=suscripciones[i].tipo_suscripcion%></div>
+                               <div class="w30"><%=suscripciones[i].precio_suscripcion%></div>
+                               <div class="w30">
+                               <button id="<%=suscripciones[i].id_suscripcion%>" class="btn btn_update"><i class="icon-edit "></i></button>
+                               </div>
+                            </div>
+                         <%}%>
+                     <%}%>
+                 </div>
+             </div>
+             <div id="cont_4_suscripcion_update">
+                 <div>
+                   <div id="cont_form_suscripcion_update">
+                       <form action="/editar_suscripcion" method="post" id="form_update_suscripcion">
+                          <div>
+                           <div>
+                               <h3>Suscripción</h3>
+                           </div>
+                           <div>
+                               <span>Tipo de suscripcion</span>
+                               <div>
+                                   <input type="text" id="txt_tipo_suscripcion_update" name="txt_tipo_suscripcion_update" class="txt_admin" required>
+                               </div>
+                           </div>
+                           <div>
+                               <span>Precio</span>
+                               <div>
+                                   <input type="text" id="txt_precio_suscripcion_update" name="txt_precio_suscripcion_update" class="txt_admin" required>
+                               </div>
+                           </div>
+                           <div class="div_btn">
+                               <button id="" type="submit" class="btn btn_update">Actualizar</button>
+                               <button id="btn_cancelar_editar_suscripcion" type="button" class="btn btn_delete">Cancelar</button>
+                           </div>
+                          </div>
+                       </form>
+                   </div>
+                 </div>
+             </div>
+          </div>
+        </div>
+       <% include ../parches/footer%> 
+    </body> 
+    <% include ../parches/script%>
+    <script type="text/javascript" src="/js/administrador/suscripciones/suscripciones.js"></script>
+</html> 

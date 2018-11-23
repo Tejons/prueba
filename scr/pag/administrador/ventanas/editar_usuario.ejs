@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>AcaNunciate</title>
+    <%include ../../parches/meta%>
+</head>
+
+<body>
+
+    <div id="cont_general"> 
+       <%include ../../parches_administrador/header_administrador%>
+       <div id="cont_general_editar_usuario">
+           <div id="cont_editar_usuario">
+              <form action="/editar_usuario/<%=usuario[0].id_usuario%>" method="post">
+                  <div>
+                     <div class="cont_frm_campo">
+                             <span class="">Nombre</span>
+                             <div class="">
+                                 <input type="text" id="" name="nombre_usuario" required value="<%=usuario[0].nombre_usuario%>" class="txt_admin_editar">
+                             </div>
+                      </div>
+                      <div class="cont_frm_campo">
+                             <span class="">Correo</span>
+                             <div class="">
+                                 <input type="email" id="" name="correo_usuario" required value="<%=usuario[0].correo_usuario%>" class="txt_admin_editar">
+                             </div>
+                      </div>
+                      <div class="cont_frm_campo">
+                             <span class="">Dispositivos disponibles</span>
+                             <div class="">
+                                 <input type="number" id="" name="dispositivos_disponibles" required value="<%=usuario[0].dispositivos_disponibles%>" class="txt_admin_editar">
+                             </div>
+                      </div>
+                      <div class="cont_frm_campo">
+                             <span class="">Validacion de cuenta</span>
+                             <div class="">
+                                 <input type="text" id="" name="validacion_usuario" required value="<%=usuario[0].validacion_usuario%>" class="txt_admin_editar">
+                             </div>
+                      </div>
+                      <div class="cont_frm_campo">
+                             <span class="">Tipo de suscripción</span>
+                             <div class="">
+                                 <input type="number" id="" name="tipo_suscripcion" required value="<%=usuario[0].id_suscripcion%>" class="txt_admin_editar">
+                             </div>
+                      </div>
+                  </div>
+                  <div id="cont_btn_editar_usuario">
+                     <button type="submit" class="btn btn_accept">Guardar</button>
+                     <a href="/usuarios"><button type="button" class="btn btn_cancel">Cancelar</button></a>
+                  </div>
+               </form>
+           </div>
+       </div>    
+
+    </div>
+    <%include ../../parches/footer%>
+</body>
+<%include ../../parches/script%>
+</html>

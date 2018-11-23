@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+		<% include parches/meta%>
+    </head>
+
+    <body class="textura_ladrillo">
+       <div id="cont_general">
+         <div id="">
+             <header class="textura_ladrillo">
+                 <div id="cont_logo_login_usuario">
+                    <a href="/">
+                        <div id="">
+                            <img src="/imagenes/acalogofinalSFF-4.png">
+                        </div>
+                     </a>      
+                 </div>
+              </header>    
+        </div>
+    	<div id="cont_general_registro">
+          <div id="cont_registro">
+             <div id="registro">
+                 
+              <div id="titulo_registro">
+                  <h1>Bienvenido a tu registro</h1>
+                  <h2>¡ Comencemos !</h2>
+                  <hr>
+              </div>
+              <div id="cont_alerta_registro">
+                  <%if(msn.length > 0){%>
+                        <div class="error">
+                            <%=msn %>
+                        </div>
+                  <%}else{%>
+                       
+                  <%}%>
+              </div>
+              <div id="cajas_registro">
+                 <form action="/registro_nuevo_usuario" method="post">
+                  <label for="nombre" class="l-cajas-registro">Nombre</label>
+                  <input type="text" id="nombre" class="cajas-registro" name="nombre_nuevo_usuario" required placeholder="Ingrese Nombre">
+                  <label for="correo" class="l-cajas-registro">Correo electrónico</label>                  
+                  <input type="email" id="correo" class="cajas-registro" name="correo_nuevo_usuario" required placeholder="Ingrese correo electronico">
+                  <label for="contrasena" class="l-cajas-registro">Contraseña</label>                
+                  <input type="password" id="contrasena" class="cajas-registro" name="contrasena_nuevo_usuario" required placeholder="Ingrese contraseña" autocomplete="new-password">    
+                  <input type="submit" value="Registrar" id="registrar" class="btn btn_new">
+                 </form>
+              </div>
+             </div>
+          </div>
+        </div>
+        </div>
+         <% include parches/footer%>     
+      </body> 
+      <% include parches/script%>
+</html>      

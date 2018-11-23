@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+        <% include ../parches/meta%>
+    </head>
+    <body>
+       <div id="cont_general">
+        <%include ../parches_administrador/header_administrador%>
+        <div id="cont_1_solicitudes">
+            <div id="cont_btn_nuevo_usuario">
+                <div id="div_btn_nuevo_usuario">
+                    <button type="button" id="btn_nuevo_usuario" ><span class="icon-plus"></span> Nuevo Usuario</button>
+                </div>
+            </div>
+            <div id="cont_alerta">
+                 <%if(msn.length > 0){%>
+                        <%=msn %>
+                 <%}%>
+            </div>
+            <div id="cont_formulario_nuevo_usuario">
+                <div id="div_formulario_nuevo_usuario_titulo">
+                    <h1>Nuevo usuario</h1>
+                </div>
+                <div id="div_formulario_nuevo_usuario_cajas">
+                    <select name="lista_suscripciones" id="lista_suscripciones" required>
+                       <option>Tipo de suscripcion</option>
+                       <%if(suscripcion.length > 0){%>
+                           <%for(var i=0; i < suscripcion.length; i++){%>
+                               <option value="<%=suscripcion[i].id_suscripcion%>"><%=suscripcion[i].tipo_suscripcion%></option>
+                           <%}%>
+                        <%}%>
+                    </select>
+                    <span>Nombre</span>
+                    <input type="text" id="nombre_usuario" class="nuevo_usuario_cajas" placeholder="Nombre de usuario">
+                    <span>Correo</span>
+                    <input type="text" id="correo_usuario" class="nuevo_usuario_cajas" placeholder="Correo electronico">
+                    <span>Numero de dispositivos</span>
+                    <input type="number" id="num_dispositivos_usuario" class="nuevo_usuario_cajas" placeholder="Numero de dispositivos">
+                    <span>Contraseña</span>
+                    <input type="text" id="contrasena_usuario" class="nuevo_usuario_cajas" placeholder="Contraseña de usuario">
+                    <span>Confirmar contraseña</span>
+                    <input type="text" id="confirmar_contrasena_usuario" class="nuevo_usuario_cajas" placeholder="Contraseña de usuario">
+                </div>
+                <div id="cont_btn_agregar_nuevo_usuario">
+                    <button id="btn_agregar_nuevo_usuario" class="btn btn_new"><span class="icon-"></span>Agregar</button>
+                </div>
+            </div>
+        </div>
+        <div id="cont_2_solicitudes">
+            <div>
+                
+            </div>
+            <div id="cont_solicitudes">
+                <div id="solicitudes">
+                        <div id="cont_titulo_lista_solicitudes">
+                        <span>Solicitudes de nuevas cuentas</span>
+                        </div>
+                        <div id="buscar_solicitudes">
+                           <div id="cont_numero_solicitudes">
+                               <span id="numero_solicitudes">Numero de solicitudes # <%=solicitudes.length%></span>
+                           </div>
+                           <div id="cont_buscar_solicitudes_txt_btn">
+                               <input type="text" id="txt_buscar_solicitud" placeholder="Buscar solicitud...">
+                               <button type="button" id="btn_buscar_solicitud"><span class="icon-search"></span></button>
+                           </div>
+                            
+                        </div>
+                    <div id="cont_tabla_solicitudes">
+                       <table id="tabla_solicitudes">
+                       <%if(solicitudes.length > 0){%>
+                                 <%for(var i=0; i < solicitudes.length; i++){%>
+                                       <thead>
+                                       <tr>
+                                           <th>N°</th>
+                                           <th>Nombre</th>
+                                           <th>Correo</th>
+                                           <th>Contraseña</th>
+                                           <th>Fecha de registro</th>
+                                           <th>Validación</th>
+                                       </tr>
+                                       </thead>
+                                       <tbody>
+                                       <tr class="filas">
+                                           <td class="sub_th"><strong>N°  </strong><%=i+1%></td>
+                                           <td id="td_n"><%=i+1%></td>
+                                           <th class="sub_th">Nombre</th>
+                                           <td><%=solicitudes[i].nombre_nuevo_usuario%></td>
+                                           <th class="sub_th">Correo</th>
+                                           <td><%=solicitudes[i].correo_nuevo_usuario%></td>
+                                           <th class="sub_th">Contraseña</th>
+                                           <td class="tdcentrado"><%=solicitudes[i].contrasena_nuevo_usuario%></td>
+                                           <th class="sub_th">Fecha de registro</th>
+                                           <td>
+                                           <%=solicitudes[i].fecha_creacion_nuevo_usuario%></td>
+                                           <th class="sub_th">Validación</th>
+                                           <td class="tdcentrado">
+                                           <%=solicitudes[i].confirmacion_nuevo_usuario%> </td>
+                                           <td><button type="button" class="btn_eliminar_solicitud" id="<%=solicitudes[i].id_nuevo_usuario%>">Eliminar</button></td>
+                                       </tr>                  
+                                 <%}%>
+                            <%}%>
+                        </tbody>    
+                      </table>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cont_3_solicitud">
+            <div id="cont_confirmacion_eliminar_solicitud">
+                <div id="confirmacion_eliminar_solicitud">
+                    <div id="seguro_span_usuario">
+                        <span>¿Seguro de eliminar la solicitud?</span>
+                    </div>
+                    <div id="confirmacion_botones_usuario">
+                        <span id="confirmacion_aceptar_solicitud"><button id="btn_confirmacion_aceptar_solicitud" class="btn btn_accept">Aceptar</button></span>
+                        <span id="confirmacion_cancelar_usuario"><button id="btn_confirmacion_cancelar_solicitud" class="btn btn_delete">Cancelar</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+       <% include ../parches/footer%> 
+    </body> 
+    <% include ../parches/script%>
+    <script type="text/javascript" src="/js/administrador/solicitudes/solicitudes.js"></script>
+    <script type="text/javascript" src="/js/administrador/usuarios/agregar_usuario.js"></script>
+</html> 

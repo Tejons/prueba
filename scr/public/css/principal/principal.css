@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+#cont_1_principal{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+#p_inicial{
+    text-align: justify;
+}
+#acanunciate{
+    color: orangered;
+    font-weight: bold;
+}
+p{
+    text-align: center;
+}
+#cont_section{
+   
+    background-color: white;
+}
+section{
+    width: 90%;
+    margin: auto;
+}
+/*-------------SLIDER-----------------*/
+#cont_general_slider{
+    position: relative;
+}
+#cont_slider{
+    margin: auto;
+    width: 40%;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+}
+#slider{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    width: 700%;/*si aumento las imagenes*/
+}
+#slider section{
+    width: 100%;
+}
+#slider img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#btn_atras,#btn_adelante{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(211, 84, 0,.8);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#btn_atras{
+    left: 2px;
+}
+#btn_adelante{
+    right: 2px;
+}
+#btn_atras i,#btn_adelante i{
+    
+}
+
+
+/*----------------------------------*/
+#cont_2_principal{
+    text-align: center;
+}
+#cont_3_principal{}
+#cont_2_principal h1,#cont_3_principal h1,#cont_4_principal h1{
+    font-size: 40px;
+    font-family:'Fjalla One', sans-serif ;
+}
+#cont_2_principal h2,#cont_3_principal h2,#cont_4_principal h2{
+    font-family:'Fjalla One', sans-serif ;
+}
+#cont_4_principal{}
+#cont_4_principal h3{
+    font-family:'Fjalla One', sans-serif ;
+}
+/*--------CLASES PRINCIPAL-----------*/
+.cont{}
+.titulo{
+    text-align: center;
+}
+.cont_beneficios{
+    margin: 10px;
+    background-color: aliceblue;
+}
+.cont_icon{
+    text-align: center;
+    font-size: 30px;
+    color: orangered;
+}
+.btn_arriba{
+    display: none;
+    padding: 20px;
+    background-color: rgba(186, 74, 0,.9);
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+}
+/*----------------------------------*/
+/*--------------FOOTER--------------*/
+    #contenedor_footer{
+        text-align: center;
+        color: white;
+    }
+    #cont_redes_sociales{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+    }
+    .icono_rs{
+        font-size: 25px;
+        margin: 5px;
+    }
+    /*----------------------------------*/
+/*-------PANTALLA CHICA-------------*/
+@media (max-width: 820px) {
+    
+    #cont_1_principal{
+        top: 20%;
+    }
+    #cont_1_principal h1{
+        font-size: 50px;
+    }
+    /*-----------SLIDER----------*/
+    #cont_slider{
+        width: 90%;
+    }
+    /*---------------------------*/
+    /*--------CLASES PRINCIPAL-----------*/
+    
+    /*----------------------------------*/
+    /*--------------FOOTER--------------*/
+
+    /*----------------------------------*/
+}
+/*----------PANTALLA GRANDE---------------------*/
+@media (min-width: 820px){
+    
+    
+    /*------------SLIDER------------------*/
+    #btn_atras:hover,#btn_adelante:hover{
+        background-color: rgba(0,0,0,.8);
+        color: white;
+    }
+    /*------------------------------------*/
+    /*--------CLASES PRINCIPAL-----------*/
+    .cont_linea_acoplado{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+    }
+    .cont_beneficios{
+        width: 30%;
+        
+    }
+    /*----------------------------------*/
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+		<%include ../parches/meta%>
+    </head>
+    <body>
+     <div id="cont_general">
+     <%include ../parches_usuario/header_usuario%>
+     <div id="contenedor">
+     <div id="cont_1_dispositivos">
+         <div id="cont_btn_nuevo_dispositivo">
+             <button id="btn_nuevo_dispositivo" type="button"><span class="icon-plus"></span> Nuevo Dispositivo</button>
+         </div>
+         <div id="cont_alerta">
+             
+         </div>
+         <div id="cont_registro_dispositivo">
+          <div id="formDis">
+           <div id="registro_dispositivo">
+           <div id="cont_formulario">
+            <h4>Nuevo Dispositivo</h4>
+            <label for="">Nombre</label>
+            <input type="text" id="nombre_dis" name="nombre" class="cajas_registro_dispositivo" required>
+            <label for="">Codigo</label>
+            <input type="text" id="codigo_dis" name="codigo" class="cajas_registro_dispositivo" required>
+            <div id="cont_btn_agregar">
+                <button type="button" id="btn_agregar_dispositivo"><span class="icon-check"></span> Agregar</button>
+            </div>
+           </div>
+            </div>
+            
+        </div>
+    </div>
+     </div>
+     <div id="cont_2_dispositivos">
+           <div id="buscar_dispositivo">
+               
+           </div>
+     </div> 
+     <div id="cont_3_dispositivos">
+         <div id="cont_numero_dispositivos">
+             <span id="numero_dispositivos">Dispositivos registrados <strong id="dispositivosRegistrados"># <%=data.length%></strong></span>
+             <div class="div_buscar">
+                 <input type="text" class="txt_buscar" id="txt_buscar_dispositivo" placeholder="Buscar dispositivo">
+                 <button class="icon-search btn_buscar"></button>
+             </div>
+         </div>
+     </div>
+     <div id="cont_4_dispositivos">
+         <%if (data) {%>
+              <% for (var i=0; i < data.length; i++){%>
+        <div id="cont_<%=data[i].codigo_dispositivo_usuario%>" class="dispositivos_totales">
+        <div id="cont_dispositivo">
+             <div id="nombre_dispositivo">
+                 <a href="dispositivos/info/<%=data[i].id_dispositivo_usuario%>" class="icon-tablet"> <%=data[i].nombre_dispositivo_usuario%></a>
+             </div>
+             <div id="conexion_dispositivos">
+                 <div id="iconos_conexion">
+                     <div class="iconos_conexion desconectado" id="sincronizacion_dispositivo_<%=data[i].codigo_dispositivo_usuario%>"><span class="icon-spinner"></span></div>
+                     <div class="iconos_conexion desconectado" id="conexion_dispositivo_<%=data[i].codigo_dispositivo_usuario%>"><span class="icon-rss"></span></div>
+                     <div class="iconos_conexion desconectado" id="posicion_dispositivo_<%=data[i].codigo_dispositivo_usuario%>"><span class="icon-map-marker"></span></div> 
+                     
+                 </div>
+                 <span class="lbl_ultima_conexion" id="ultima_conexion_<%=data[i].codigo_dispositivo_usuario%>"></span>
+                 <span id="<%=data[i].codigo_dispositivo_usuario%>" class="icon-trash-o eliminar_dispositivo"></span>
+             </div>    
+         </div>
+         </div>         
+             <%}%>
+         <%}%>
+     </div>
+     <div id="cont_5_dispositivos">
+         <div id="cont_confirmacion_eliminar_dispositivo">
+             <div id="confirmacion_eliminar_dispositivo">
+                <div id="seguro_span">
+                    <span>¿Seguro de eliminar el dispositivo?</span>
+                </div>
+                <div id="confirmacion_botones_dispositivo">
+                    <span id="confirmacion_aceptar"><button id="btn_confirmacion_aceptar_dispositivo" class="confirmacion_btn">Aceptar</button></span>
+                    <span id="confirmacion_cancelar"><button id="btn_confirmacion_cancelar_dispositivo" class="confirmacion_btn">Cancelar</button></span>
+                </div>
+             </div>
+         </div>
+     </div>    
+     </div>
+    </div>
+    <%include ../parches/footer%>
+    </body>
+<%include ../parches/script%>
+<script type="text/javascript" src="/js/usuario/dispositivos/dispositivos.js"></script>
+<script type="text/javascript" src="/js/usuario/dispositivos/main_dispositivo.js"></script>
+<!--<%include ../parches/script%>-->
+</html>  

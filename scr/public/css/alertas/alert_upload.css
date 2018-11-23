@@ -1,0 +1,17 @@
+.correcto{
+     color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    border-radius: 5px;
+   
+}
+
+.error{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    border-radius: 5px;
+}
+#conf_video_cargado{
+    display: none;
+}

@@ -1,0 +1,42 @@
+
+.encabezado{
+    text-align: center;
+    width: 25%;
+    color: white;
+    
+}
+.div_li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+#cont_lista_clientes span{
+    display: inline-block;
+    width: 23%;
+    border: solid 1px #000;
+    margin: 0;
+    padding: 0;
+}
+#tabla_clientes{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #F2F4F4;
+    border-collapse: collapse;
+}
+
+/*PANTALLA CHICA*/
+@media (max-width: 820px) {
+    #cont_general_clientes{
+        width: 90%;
+        margin: auto;
+    }
+}
+/*PANTALLA GRANDE*/
+@media (min-width: 820px) {
+    #cont_general_clientes{
+        width: 80%;
+        margin: auto;
+    }
+    
+}

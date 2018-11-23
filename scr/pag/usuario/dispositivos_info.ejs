@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+		<%include ../parches/meta%> 
+    </head>
+
+    <body>
+    <div id="cont_general">
+        <%include ../parches_usuario/header_usuario%>
+      <div id="cont_general_dispositivos_info">
+      <div id="cont_alerta">
+          
+           <%if(msn.length > 0){%>
+                  <%=msn %>
+           <%}%>
+                 
+       </div> 
+       <div id="cont_1_2">
+        <div id="cont_1_dispositivos_info">
+          <div id="cont_info_dispositivo_info">
+              <div id="cont_titulo_info_dispositivo_info" class="cont_titulo">
+                 <span>Información del dispositivo</span>
+              </div>
+              <div id="div_info_dispositivo_info" class="fondo">
+                 <div id="div_nombre_dispositivo_info">
+                     <span id="<%=disp[0].id_dispositivo_usuario%>" class="id_dispositivo"> <%=disp[0].nombre_dispositivo_usuario%></span>
+                 </div>
+                 <div id="cont_menu_info_dispositivo_info">
+                     <ul id="ul_menu_info_dispositivo_info">
+                         <li id="eventos">Eventos del reproductor</li>
+                         <li id="ajustes">Editar nombre</li>
+                         <li id="ubicacion"><a href="#cont_3_dispositivos_info">Ir a ubicación</a></li>
+                     </ul>
+                 </div>
+              </div>
+          </div>
+       </div>
+       <div id="cont_2_dispositivos_info">
+           <div id="cont_titulo_eventos_dispositivo_info" class="cont_titulo contenedor_en_linea">
+               <span>Eventos del dispositivo</span>
+               <select name="mostrar_eventos" id="mostrar_eventos">
+                   <option value="etodos">Todos los eventos</option>
+                   <option value="econectado">Conectado</option>
+                   <option value="edesconectado">Desconectado</option>
+                   <option value="edescargado">Video descargado</option>
+                   <option value="evideoreproducido">Video reproducido</option>
+                   <option value="eeliminado">Video elimando</option>
+                   <option value="eerrores">Errores</option>
+               </select>
+           </div>
+           <div id="cont_eventos_dispositivo_info" class="cont_info">
+               <ul id="lista_eventos_dispositivo_info">
+                    <%if (dispoInfo) {%>
+                        <% for (var i=0; i <dispoInfo.length; i++){%>
+                              <%if(dispoInfo[i].evento_dispositivo_tipo == 'conectado') {%>
+                                  <li class="liconectado"> <span class="evento"><%=dispoInfo[i].evento_dispositivo_informacion%></span> <span class="fecha"> Fecha</span> <span> <%=dispoInfo[i].fecha_hora_evento_disposito%></span></li>
+                              <%}else if(dispoInfo[i].evento_dispositivo_tipo == 'reproduccion'){%>
+                                  <li class="lireproduccion"><span class="evento"><%=dispoInfo[i].evento_dispositivo_informacion%></span> <span class="fecha"> Fecha</span><span> <%=dispoInfo[i].fecha_hora_evento_disposito%></span></li>
+                              <%}else if(dispoInfo[i].evento_dispositivo_tipo == 'desconectado'){%>
+                                  <li class="lidesconectado"><span class="evento"><%=dispoInfo[i].evento_dispositivo_informacion%></span> <span class="fecha"> Fecha</span><span> <%=dispoInfo[i].fecha_hora_evento_disposito%></span></li>
+                              <%}else if(dispoInfo[i].evento_dispositivo_tipo == 'vDescargado'){%>
+                                  <li class="livdescargado"><span class="evento"><%=dispoInfo[i].evento_dispositivo_informacion%></span> <span class="fecha"> Fecha</span><span> <%=dispoInfo[i].fecha_hora_evento_disposito%></span></li>
+                              <%}else if(dispoInfo[i].evento_dispositivo_tipo == 'errorD'){%>
+                                  <li class="lierrord"><span class="evento"><%=dispoInfo[i].evento_dispositivo_informacion%></span> <span class="fecha"> Fecha</span><span> <%=dispoInfo[i].fecha_hora_evento_disposito%></span></li>
+                              <%}else if(dispoInfo[i].evento_dispositivo_tipo == 'vEliminado'){%>
+                                  <li class="liveliminado"><span class="evento"><%=dispoInfo[i].evento_dispositivo_informacion%></span> <span class="fecha"> Fecha</span><span> <%=dispoInfo[i].fecha_hora_evento_disposito%></span></li>
+                              <%}%>    
+                        <%}%>
+                    <%}%>
+               </ul>
+           </div>
+       </div>
+       </div>  
+       <div id="cont_3_dispositivos_info">
+           <div id="cont_titulo_ubicacion_dispositivo_info" class="cont_titulo">
+               <span>Ubicacion del dispositivo</span>
+           </div>
+           <div id="cont_ubicacion_dispositivo_info" >
+               <div id="div_ubicacion_mapa">
+                   
+               </div>
+           </div>
+       </div>
+       <div id="cont_actualizar_dispositivos_info">
+           <div id="div_actualizar_dispositivos_info">
+               <div id="frm_actualizar_dispositivo_info">
+                   <div id="titulo_frm">
+                       <span>Actualizar nombre</span>
+                   </div>
+                   <form action="/actualizar_nombre_dispositivo" method="post">
+                      <div id="div_txt_nuevo_nombre_dispositivo_info">
+                          <input type="text" id="txt_id_dispositivo_info" name="txt_id_dispositivo_info" value="<%=disp[0].id_dispositivo_usuario%>">
+                          <input type="text" id="txt_nuevo_nombre_dispositivo_info" name="txt_nuevo_nombre_dispositivo_info" value="<%=disp[0].nombre_dispositivo_usuario%>" placeholder=" Nuevo nombre">
+                      </div>
+                      <div id="cont_botones_confirmacion_nuevo_nombre_dispositivo_info">
+                          <button type="submit" id="btn_actualizar_nuevo_nombre_dispositivo_info" class="confirmacion_btn"><span>Actualizar</span></button>
+                          <button type="button" id="btn_cancelar_nuevo_nombre_dispositivo_info" class="confirmacion_btn"><span>Cancelar</span></button>
+                      </div>
+                   </form>
+               </div>
+           </div>
+       </div>
+      </div> 
+    </div>
+    <%include ../parches/footer%>
+    </body>
+<%include ../parches/script%>
+<script type="text/javascript" src="/js/usuario/dispositivos/dispositivos_info.js"></script>
+</html> 

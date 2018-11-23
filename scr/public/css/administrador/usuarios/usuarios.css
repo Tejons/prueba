@@ -1,0 +1,278 @@
+#cont_1_usuarios{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(51,51,51,.7);
+    display: none;
+}
+#cont_confirmacion_eliminar_usuario{
+    position: absolute;
+    width: 30%;
+    top: 30%;
+    left: 35%;
+    border-radius: 5px;
+    background-color: rgba(51,51,51,1);
+}
+#confirmacion_eliminar_usuario{
+    width: 95%;
+    margin: auto;
+    text-align: center;
+}
+#seguro_span_usuario{
+    color: aliceblue;
+}
+#confirmacion_botones_usuario{
+    padding: 10px;
+}
+
+#btn_confirmacion_aceptar_usuario{
+    border: none;
+    background-color:  #4CAF50;
+}
+
+#btn_confirmacion_aceptar_usuario:hover{
+    background-color: #218838;
+}
+#btn_confirmacion_cancelar_usuario{
+    border: none;
+    background-color: #E74C3C;
+}
+#btn_confirmacion_cancelar_usuario:hover{
+    background-color:#C3322E;
+}
+/*INICIO CONT_2*/
+#cont_2_usuarios{
+    width: 80%;
+    margin: auto;
+}
+/*INICIO CONT_USUARIOS*/
+
+/*INICIO  CONT_BUSCAR_USUARIO*/
+
+#txt_buscar_usuario{
+    padding: 3px;
+    /*border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;*/
+    width: 100%;
+    height: 30px;
+}
+
+#btn_buscar_usuario{
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+/*FIN DE CONTENEDOR CONT_BUSCAR_USUARIO*/
+/*INICIO CONT_TABLA_USUARIOS*/
+#cont_tabla_usuarios{
+     margin-top: 3px;
+}
+#tabla_usuarios{
+    border-radius: 5px;
+    background-color: #F2F4F4;
+    border-collapse: collapse;
+}
+thead{
+    
+}
+th,tr,td{
+    padding: 10px;
+    text-align: left;
+}
+.registro{
+    background-color: rgba(51,51,51,.5);
+}
+td{
+    border: none;
+    padding: 5px;
+}
+.tdcentrado{
+    text-align: center;
+}
+.sub_th{
+    display: none;
+}
+.btn_eliminar_usuario{
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    width: 60px;
+    height: 25px;
+    padding: 3px;
+    background-color: #E74C3C;
+}
+.btn_editar_usuario{
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    width: 60px;
+    height: 25px;
+    padding: 3px;
+    background-color: #3E8BCD;
+}
+/*FIN CONT_USUARIOS*/
+/*FIN CONT_2*/
+
+
+/*PANTALLA CHICA*/
+@media (max-width: 820px) {
+
+#cont_1_usuarios{
+    width: 100%;
+    left: 0%;
+}    
+#cont_confirmacion_eliminar_usuario{
+    width: 80%;
+    left: 10%;
+    top: 40%;    
+}    
+
+#cont_titulo_lista span{
+    font-size: 25px;
+    background-color: #CCD1D1;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 22px;
+}    
+#cont_titulo_lista span{
+    text-align: center;
+}
+    
+#div_numero_usuarios{
+    width: 100%;
+    height: 30px;
+    background-color: #CCD1D1;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}    
+/*INICIO  CONT_BUSCAR_USUARIO*/
+#cont_buscar_usuario_txt_btn{
+    display: table;
+    width: 100%;
+}
+#div_txt_buscar_usuario{
+    float: left;
+    width: 95%;
+}
+#txt_buscar_usuario{
+    width: 100%;
+    height: 45px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#div_boton_buscar_usuario{
+    float: left;
+    width: 5%;
+}
+#btn_buscar_usuario{
+    width: 100%;
+    height: 45px;
+}
+/*FIN DE CONTENEDOR CONT_BUSCAR_USUARIO*/
+/*INICIO CONT_TABLA_USUARIOS*/
+
+#tabla_usuarios{
+    border-radius: 10px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,#td_n{
+    display: none;
+}
+.sub_th{
+    display: block;
+}    
+tr{
+    border-bottom: 3px solid rgba(51,51,51,.9);
+   /*background-color: #CCD1D1;*/
+}
+td{
+   float: left;
+   width: 100%;
+   /*background-color: #F2F4F4;*/
+}
+    
+.btn_eliminar_usuario{
+   width: 100%;
+   height: 40px;    
+}
+.btn_editar_usuario{
+    width: 100%;
+    height: 40px;
+}
+.tdcentrado{
+    text-align: left;
+}    
+/*FIN CONT_USUARIOS*/
+/*FIN CONT_2*/        
+}
+
+
+/*PANTALLA GRANDE*/
+@media (min-width: 820px) {
+/*INICIO CONT_2*/
+/*INICIO CONT_USUARIOS*/
+
+#cont_titulo_lista span{
+    font-size: 25px;
+    background-color: #CCD1D1;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 22px;
+}
+/*INICIO  CONT_BUSCAR_USUARIO*/
+#cont_buscar_usuario{
+    display: table;
+    width: 100%;
+}
+#div_numero_usuarios{
+    float: left;
+    width: 39%;
+    height: 30px;
+    display: table;
+    background-color: #CCD1D1;
+    border-bottom-left-radius: 5px;
+    
+}
+#div_numero_usuarios span{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px;
+}
+#div_txt_buscar_usuario{
+    float: left;
+    width: 30%;
+}
+#txt_buscar_usuario{
+    
+}
+#div_boton_buscar_usuario{
+    float: left;
+}
+
+/*FIN DE CONTENEDOR CONT_BUSCAR_USUARIO*/
+/*INICIO CONT_TABLA_USUARIOS*/
+
+
+/*FIN CONT_USUARIOS*/
+/*FIN CONT_2*/    
+
+.btn_eliminar_usuario:hover{
+    background-color: #C3322E;
+}
+.btn_editar_usuario:hover{
+    background-color: #2874A6;
+}
+.filas:hover{
+    background-color: rgba(51,51,51,.5);
+    cursor: pointer;
+}    
+}

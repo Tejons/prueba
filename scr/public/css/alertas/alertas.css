@@ -1,0 +1,35 @@
+.correcto{
+    font-size: 16px;
+    color:black;
+    font-weight: bold;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0f9b0f, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0f9b0f, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-color: #d6e9c6;
+    border-radius: 5px;
+    padding-left: 5px;
+   
+}
+
+.error{
+    font-size: 16px;
+    color:black;
+    font-weight: bold;
+    background: #333333;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #dd1818, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #dd1818, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-color: #ebccd1;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.info{
+    font-size: 16px;
+    color:black;
+    font-weight: bold;
+    background: #fffc00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fffc00, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fffc00, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-color: #ebccd1;
+    border-radius: 5px;
+    padding-left: 5px;
+}

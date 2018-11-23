@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>AcaNunciate</title>
+		<%include ../parches/meta%> 
+    </head>
+
+    <body>
+    <div id="cont_general">
+        <%include ../parches_usuario/header_usuario%>
+        <div id="cont_general_publicaciones_info">
+          <div id="cont_alerta">
+                    <%if(msn.length > 0){%>
+                           <%=msn %>
+                    <%}%>    
+          </div>
+           <div id="cont_1_general_div_publicaciones_info">
+               <div id="cont_titulo_publicacion_info">
+                    <span>Videos de la publicación</span>
+               </div>
+               <div id="div_videos_publicacion_info">
+                   <%if(videos) {%>
+                            <%for(var i=0; i < videos.length; i++){%>                                
+                                <div id="div_video_publicacion_info">
+                                    <video src="/video/<%=user.correo%>/<%=videos[i].nombre_video_usuario%>" controls></video>
+                                </div> 
+                            <%}%>
+                       <%}%>
+               </div>
+           </div>
+           <div id="cont_2_general_div_publicaciones_info">
+            <div id="cont_1_publicaciones_info">
+                <div id="div_1_publicaciones_info">
+                    <div id="cont_titulo_publicacion_info">
+                        <span>Informaion de la publicación</span>
+                    </div>
+                    <div id="cont_txt_btn_info" class="fondo">     
+                       <div id="cont_txt_nombre_publicacion_info">
+                         <span><strong>NOMBRE</strong></span>
+                         <input type="text" id="txt_nombre_publicacion_info" value="<%=publicacion[0].nombre_video_dispositivo_usuario%>" class="txt_panel">
+                       </div>  
+                       <div id="cont_btn_nuevo_dispositivo_publicacion">
+                             <button id="btn_nuevo_dispositivo_publicacion" >Agregar dispositivo </button>
+                             <button id="btn_eliminar_dispositivo_publicacion" class="btn btn_delete" >Eliminar dispositivo </button>
+                       </div>
+                    </div>      
+                </div>
+            </div>
+            <div id="cont_nuevo_dispositivo_publicacion">
+                <div id="cont_titulo_publicacion_info">
+                    <span>Dispositivos sin la publiación</span>
+                </div>
+                <div id="cont_div_nuevo_dispositivo_publicacion" class="fondo">
+                <div id="div_nuevo_dispositivo_publicacion">
+                    <%if(dispositivosN.length > 0) {%>
+                           <% for (var j=0; j < dispositivosN.length; j++){%>
+                                <span id='<%=dispositivosN[j].id_dispositivo_usuario%>publ' class="icon-circle-thin select_nuevo_dispositivo_publicacion"></span><span class="padding"><%=dispositivosN[j].nombre_dispositivo_usuario%></span>
+                           <%}%>
+                    <%}else{%>
+                             <span>Todos los dispositivos ya cuentan con está publicación</span>
+                           <%}%>   
+                </div>
+                <div id="div_botones_publicar_nuevos_dispositivos_info">
+                    <button id="btn_publicar_video_info_aceptar" class="confirmacion_btn"><span class="icon-"></span> Publicar</button>
+                    <button id="btn_publicar_video_info_cancelar" class="confirmacion_btn"><span class="icon-"></span> Cancelar</button>
+                </div>
+                </div>
+            </div>
+            <div id="cont_eliminar_dispositivo_publicacion">
+                <div id="cont_titulo_publicacion_info">
+                    <span>Eliminar dispositivo de la  publiación</span>
+                </div>
+                <div id="cont_div_eliminar_dispositivo_publicacion" class="fondo">
+                <div id="div_eliminar_dispositivo_publicacion">
+                    <%if(dispositivos.length > 0) {%>
+                           <% for (var j=0; j < dispositivos.length; j++){%>
+                               <span id='<%=dispositivos[j].id_dispositivo_usuario%>pube' class="icon-circle-thin select_eliminar_dispositivo_publicacion"></span><span class="padding"><%=dispositivos[j].nombre_dispositivo_usuario%></span>
+                           <%}%>
+                    <%}else{%>
+                            
+                           <%}%>   
+                </div>
+                <div id="div_botones_publicar_eliminar_dispositivos_info">
+                    <button id="btn_eliminar_video_info_aceptar" class="btn btn_accept"><span class="icon-"></span> Aceptar</button>
+                    <button id="btn_eliminar_video_info_cancelar" class="btn btn_delete"><span class="icon-"></span> Cancelar</button>
+                </div>
+                </div>
+            </div>
+            <div id="cont_2_publicaciones_info" class="fondo">
+                <div id="div_2_publicaciones_info">
+                    <div id="cont_titulo_publicacion_video_info">
+                        <span>Video publicado</span>
+                    </div>
+                    <div id="cont_publicacion_video_info">
+                       <%if(videos) {%>
+                            <%for(var i=0; i < videos.length; i++){%>                                
+                                <span id="<%=videos[i].id_video_usuario%>" class="icon-video-camera video_publicar_info">   <%=videos[i].nombre_video_usuario.replace(/_/g," ").slice(0,-4)%></span>   
+                            <%}%>
+                       <%}%>
+                    </div>
+                </div>
+            </div>
+            <div id="cont_3_publicaciones_info" class="fondo">
+                <div id="div_3_publicaciones_info">
+                    <div id="cont_titulo_publicacion_dispositivo_info">
+                        <span>Dispositivos con la publicacion</span>
+                    </div>
+                    <div id="cont_publicacion_dispositivos_info">
+                        <%if (dispositivos) {%>
+                            <% for (var i=0; i <dispositivos.length; i++){%>
+                                      <span class="icon-tablet" id="span_nombre_dispositivo_publicar"> <%=dispositivos[i].nombre_dispositivo_usuario%></span>   
+                            <%}%>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <div id="cont_4_publicaciones_info">
+                <div id="div_4_publicaciones_info">
+                    <div id="cont_botones_publicaciones_info">
+                        <button class="confirmacion_btn" id="btn_guardar_publicaciones_info">Actualizar</button>
+                        <button class="btn btn_delete eliminar_publicaciones_info" id="<%=publicacion[0].nombre_video_dispositivo_usuario%>">Eliminar publicación</button>
+                    </div>
+                </div>
+            </div>
+            <div id="cont_general_confirmacion_eliminar_publicacion">
+               <div id="cont_confirmacion_eliminar_publicacion">
+                <div id="div_confirmacion_eliminar_publicacion">
+                    <div id="seguro_span_publicacion">
+                        <span><strong>¿Seguro de eliminar la publicación?</strong></span>
+                        <span>La publicación se eliminara de todos los dispositivos en los que se publicó.</span>
+                    </div>
+                    <div id="confirmacion_botones_publicacion">
+                        <span id="confirmacion_aceptar_publicacion"><button id="btn_confirmacion_aceptar_publicacion" class="confirmacion_btn">Aceptar</button></span>
+                        <span id="confirmacion_cancelar_publicacion"><button id="btn_confirmacion_cancelar_publicacion" class="confirmacion_btn">Cancelar</button></span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </body>
+  
+<%include ../parches/footer%>
+<%include ../parches/script%>
+<script type="text/javascript" src="/js/usuario/publicaciones/publicaciones_info.js"></script>
+</html>
